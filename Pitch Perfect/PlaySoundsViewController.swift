@@ -93,7 +93,7 @@ class PlaySoundsViewController: UIViewController {
         
         audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
         do {
-            try audioEngine.startAndReturnError()
+            try audioEngine.start()
         } catch _ {
         }
         

@@ -51,7 +51,12 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         } catch _ {
         }
         
-        audioRecorder = try? AVAudioRecorder(URL: filePath, settings: nil)
+        let recordSettings = [AVSampleRateKey : NSNumber(float: Float(44100.0)),
+            AVFormatIDKey : NSNumber(int: Int32(kAudioFormatMPEG4AAC)),
+            AVNumberOfChannelsKey : NSNumber(int: 1),
+            AVEncoderAudioQualityKey : NSNumber(int: Int32(AVAudioQuality.Medium.rawValue))]
+        
+        audioRecorder = try? AVAudioRecorder(URL: filePath!, settings: recordSettings )
         audioRecorder.delegate=self
         audioRecorder.meteringEnabled = true;
         audioRecorder.prepareToRecord()
