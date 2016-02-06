@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iIA-LW-8vo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iIA-LW-8vo">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -178,16 +179,16 @@
                                 <exclude reference="NhZ-PN-xNU"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="0zt-fI-GIs"/>
-                                <exclude reference="y9Z-SB-10W"/>
+                                <exclude reference="3IT-zn-BDi"/>
+                                <exclude reference="Ndb-Oj-Poh"/>
+                                <exclude reference="0EZ-xd-60j"/>
+                                <exclude reference="yvB-FO-UvY"/>
                                 <exclude reference="9Kx-5o-2YA"/>
                                 <exclude reference="vvT-Bq-Ek0"/>
                                 <exclude reference="Axo-s7-GX7"/>
                                 <exclude reference="hAa-EP-j8s"/>
-                                <exclude reference="0EZ-xd-60j"/>
-                                <exclude reference="yvB-FO-UvY"/>
-                                <exclude reference="Ndb-Oj-Poh"/>
-                                <exclude reference="3IT-zn-BDi"/>
+                                <exclude reference="0zt-fI-GIs"/>
+                                <exclude reference="y9Z-SB-10W"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -199,16 +200,16 @@
                                 <include reference="NhZ-PN-xNU"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="0zt-fI-GIs"/>
-                                <include reference="y9Z-SB-10W"/>
+                                <include reference="3IT-zn-BDi"/>
+                                <include reference="Ndb-Oj-Poh"/>
+                                <include reference="0EZ-xd-60j"/>
+                                <include reference="yvB-FO-UvY"/>
                                 <include reference="9Kx-5o-2YA"/>
                                 <include reference="vvT-Bq-Ek0"/>
                                 <include reference="Axo-s7-GX7"/>
                                 <include reference="hAa-EP-j8s"/>
-                                <include reference="0EZ-xd-60j"/>
-                                <include reference="yvB-FO-UvY"/>
-                                <include reference="Ndb-Oj-Poh"/>
-                                <include reference="3IT-zn-BDi"/>
+                                <include reference="0zt-fI-GIs"/>
+                                <include reference="y9Z-SB-10W"/>
                             </mask>
                         </variation>
                     </view>

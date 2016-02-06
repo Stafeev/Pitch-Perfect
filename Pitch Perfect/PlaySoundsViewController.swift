@@ -26,11 +26,11 @@ class PlaySoundsViewController: UIViewController {
         else {
             println("The filePath is empty")
         }*/
-        audioPlayer = AVAudioPlayer(contentsOfURL: receivedAudio.filePathUrl, error: nil)
+        audioPlayer = try? AVAudioPlayer(contentsOfURL: receivedAudio.filePathUrl)
         audioPlayer.enableRate=true
         
         audioEngine = AVAudioEngine()
-        audioFile = AVAudioFile(forReading: receivedAudio.filePathUrl, error: nil)
+        audioFile = try? AVAudioFile(forReading: receivedAudio.filePathUrl)
 
         // Do any additional setup after loading the view.
     }
@@ -92,7 +92,10 @@ class PlaySoundsViewController: UIViewController {
         audioEngine.connect(changePitchEffect, to: audioEngine.outputNode, format: nil)
         
         audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
-        audioEngine.startAndReturnError(nil)
+        do {
+            try audioEngine.startAndReturnError()
+        } catch _ {
+        }
         
         audioPlayerNode.play()
     }
