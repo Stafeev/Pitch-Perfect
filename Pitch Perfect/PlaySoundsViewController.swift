@@ -19,13 +19,6 @@ class PlaySoundsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*if var filePath = NSBundle.mainBundle().pathForResource("movie_quote", ofType: "mp3"){
-            var filePathUrl = NSURL.fileURLWithPath(filePath)
-
-        }
-        else {
-            println("The filePath is empty")
-        }*/
         audioPlayer = try? AVAudioPlayer(contentsOfURL: receivedAudio.filePathUrl)
         audioPlayer.enableRate=true
         
@@ -42,30 +35,15 @@ class PlaySoundsViewController: UIViewController {
     
 
     @IBAction func playFastAudio(sender: UIButton) {
-        audioPlayer.stop()
-        audioPlayer.rate=1.5
-        audioPlayer.currentTime=0.0
-        audioPlayer.play()
+        playWithSpeed(1.5,currentTime: 0.0)
     }
     
     @IBAction func stopAudio(sender: UIButton) {
         audioPlayer.stop()
     }
     @IBAction func playSlowAudio(sender: UIButton) {
-        audioPlayer.stop()
-        audioPlayer.rate=0.5
-        audioPlayer.currentTime=0.0
-        audioPlayer.play()
+        playWithSpeed(0.5,currentTime: 0.0)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     @IBAction func playChipmunkAudio(sender: UIButton) {
         playAudioWithVariablePitch(1000)
@@ -76,10 +54,20 @@ class PlaySoundsViewController: UIViewController {
         playAudioWithVariablePitch(-1000)
     }
     
-    func playAudioWithVariablePitch(pitch: Float){
+    func stopAndResetAudioPlayback() {
         audioPlayer.stop()
         audioEngine.stop()
         audioEngine.reset()
+    }
+    func playWithSpeed(rate:Float, currentTime:Double) {
+        audioPlayer.stop()
+        audioPlayer.rate=rate
+        audioPlayer.currentTime=currentTime
+        audioPlayer.play()
+    }
+    
+    func playAudioWithVariablePitch(pitch: Float){
+        stopAndResetAudioPlayback()
         
         var audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
